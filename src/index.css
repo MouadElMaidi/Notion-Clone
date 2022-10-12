@@ -1,1 +1,167 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* Custom Properties */
+
+:root {
+  --ff-primary: "Inter", sans-serif;
+
+  --clr-gray-1: #3a3a3a;
+  --clr-gray-2: #323232;
+  --clr-gray-3: #828282;
+
+  --clr-purple: #6f38c5;
+}
+
+/*General Styles */
+body {
+  font-family: var(--ff-primary);
+  color: var(--clr-gray-1);
+}
+
+section {
+  width: 90vw;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.btn {
+  font-size: 0.9rem;
+  padding: 0.25rem 0.75rem;
+  border-color: transparent;
+  cursor: pointer;
+  font-family: var(--ff-primary);
+  background: transparent;
+  font-weight: 600;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Navigation*/
+.nav {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.nav-center {
+  width: 90vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1em;
+  /* background-color: rgb(107, 107, 107); */
+}
+
+.nav__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__logo--logoimg {
+  width: 28px;
+}
+
+.nav__logo--text {
+  font-size: 22px;
+  font-weight: 900;
+  margin-left: 5px;
+  color: var(--clr-gray-2);
+}
+
+.nav__links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-items: center;
+  gap: 0.4em;
+}
+
+.btn--link {
+  color: #555;
+}
+
+.chevronD-icon {
+  /* position: absolute;
+  top: 3px; */
+}
+
+.cta-buttons {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1em;
+}
+
+.btn--login {
+  color: var(--clr-purple);
+  border: 2px solid var(--clr-purple);
+  font-weight: 600;
+}
+.btn--signup {
+  color: white;
+  background: var(--clr-purple);
+  font-weight: 600;
+}
+
+/* Hero Section */
+
+.hero-grid {
+  display: grid;
+  /* background: yellow; */
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+.hero__info {
+  /* margin-top: -7em; */
+  margin-top: 5em;
+}
+
+.hero__title {
+  font-size: 4rem;
+  margin-bottom: 0.2em;
+}
+
+.italic-strikethrough {
+  font-weight: 400;
+  font-style: italic;
+  text-decoration: line-through;
+  /* text-decoration-thickness: 0.05em; */
+}
+
+.hero__subtitle {
+  font-size: 1.2rem;
+  color: var(--clr-gray-3);
+  margin-bottom: 1.5em;
+  line-height: 1.3em;
+}
+
+.hero__cta-buttons {
+  display: grid;
+  width: 50%;
+  grid-template-columns: 150px 150px;
+  gap: 0.5em;
+}
+
+/* DEMO PAGE */
+.split {
+  display: flex;
+}
