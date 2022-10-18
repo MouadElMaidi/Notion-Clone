@@ -2,40 +2,37 @@ import React from "react";
 import { useRef, useEffect } from "react";
 import ContentEditable from "react-contenteditable";
 import { AiOutlineFile } from "react-icons/ai";
+import { useGlobalContext } from "./context";
 
 const Task = (props) => {
-  const { groupId, id, deleteTiteless } = props;
-  const taskHTML = useRef("");
-  const ceREF = useRef("");
+  const { groupId, taskId, title } = props;
+  const { handleTaskTitleChange, handleDragStart, handleDrop } =
+    useGlobalContext();
 
-  const handleChange = (e) => {
-    taskHTML.current = e.target.value;
-  };
+  // const ceREF = useRef("");
+  // const liREF = useRef();
 
-  const handleFocus = () => {};
-
-  const handleBlur = () => {
-    const title = taskHTML.current;
-    deleteTiteless(title, groupId, id);
-  };
-
-  useEffect(() => {
-    ceREF.current.focus();
-  }, []);
+  // useEffect(() => {
+  //   ceREF.current.focus();
+  // }, []);
 
   return (
-    <li draggable={true}>
+    <li
+      draggable={true}
+      className="list-item"
+      onDragStart={(e) => handleDragStart(e, groupId, taskId, title)}
+      onDrop={(e) => handleDrop(e)}
+      // ref={liREF}
+    >
       <div className="task">
         <AiOutlineFile className="file-icon" />
         <ContentEditable
-          innerRef={ceREF}
-          html={taskHTML.current}
+          // innerRef={ceREF}
+          html={title}
           tagName="h5"
-          onChange={handleChange}
+          onChange={(e) => handleTaskTitleChange(e, groupId, taskId)}
           className="task__title editable"
-          placeholder={"Untitled"}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
+          placeholder="Untitled"
         />
       </div>
     </li>

@@ -279,6 +279,13 @@ h5 {
 }
 
 /* Task */
+.list-item {
+  cursor: pointer;
+}
+
+.list-item.over {
+  border: 3px dotted #666;
+}
 
 .file-icon {
   margin-right: 0.2em;
